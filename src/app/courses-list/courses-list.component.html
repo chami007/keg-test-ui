@@ -1,0 +1,53 @@
+<div class="position-relative overflow-hidden p-3 p-md-2 m-md-2 text-center bg-light">
+  <div class="col-md-5 p-lg-2 mx-auto my-2">
+    <h1 class="display-4 fw-normal">Course Directory</h1>
+  </div>
+</div>
+<div class="container mt-4">
+
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <!-- Search Bar -->
+      <div class="input-group">
+        <mat-form-field class="w-100">
+          <input matInput [formControl]="searchControl" placeholder="What do you want to study?">
+        </mat-form-field>
+      </div>
+
+      <div class="list-group" *ngFor="let course of courses">
+        <div class="list-group-item list-group-item-action mb-3" aria-current="true">
+          <h5 class="mb-1">{{course.courseName}}</h5>
+          <p class="mb-1">{{course.instituteName}}</p>
+          <div class="d-flex w-100 justify-content-between">
+            <small>Start date : {{course.startDate | date:'mediumDate'}}</small>
+            <button class="bg-orange text-light"
+              (click)="contactUsDialog(course.courseId, course.courseName, course.instituteName)"
+              mat-stroked-button>Contact</button>
+          </div>
+          <p *ngIf="course.language" class="mt-2">
+            <span class="badge rounded-pill bg-secondary text-orage">{{course.language}} language</span>
+          </p>
+        </div>
+      </div>
+
+      <p class="text-center">{{apiMessage}}</p>
+      <div class="d-flex justify-content-center" *ngIf="isLoading">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-end mt-3">
+        <mat-paginator [pageSizeOptions]="[10, 20, 30]" [length]="totalItems" showFirstLastButtons></mat-paginator>
+      </div>
+
+    </div>
+  </div>
+</div>
