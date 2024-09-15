@@ -3,6 +3,5 @@
 }
 
 ::ng-deep.mdc-text-field--filled {
-    /*change color of underline*/
     background-color: white !important;
   } 

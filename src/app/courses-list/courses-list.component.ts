@@ -32,8 +32,8 @@ export class CoursesListComponent implements OnInit, AfterViewInit {
     this.loadPageData(0, 10, this.searchFilter);
 
     this.searchControl.valueChanges.pipe(
-      debounceTime(500),  // Adjust the debounce time in milliseconds
-      distinctUntilChanged()  // Only trigger if the search term actually changes
+      debounceTime(500),
+      distinctUntilChanged()
     ).subscribe(searchValue => {
       this.applyFilter(searchValue ?? '');
     });

@@ -13,7 +13,7 @@ body {
 
 .snackbar-success {
   .mdc-snackbar__surface {
-    background-color: #4CAF50 !important;
+    background-color: #f00 !important;
   }
 
   .mdc-snackbar__label {
@@ -34,4 +34,5 @@ body {
 .bg-orange {
   background-color: #f00 !important;
   border-color: #f00 !important;
+  padding: 35px;
 }

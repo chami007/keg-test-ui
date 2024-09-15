@@ -1,14 +1,14 @@
-import { TestBed } from '@angular/core/testing';
-import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
-import { CourseService } from './course.service';
 import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 import { ContactUs } from '../models/contact-us';
+import { CourseService } from './course.service';
 
 describe('CourseService', () => {
     let service: CourseService;
     let httpMock: HttpTestingController;
 
-    const apiUrl = 'https://localhost:7263/api'
+    const apiUrl = 'http://localhost:5124/api'
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

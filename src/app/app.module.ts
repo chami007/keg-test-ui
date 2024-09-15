@@ -4,9 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -29,11 +27,9 @@ import { ContactUsDialogComponent } from './contact-us-dialog/contact-us-dialog.
     AppRoutingModule,
     ReactiveFormsModule,
 
-    MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule,
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule
